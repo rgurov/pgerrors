@@ -1,4 +1,4 @@
-# PGErrors
+# pgerrors
 
 Simple Go library with all PostgreSQL error codes
 

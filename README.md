@@ -1,13 +1,14 @@
 # PGErrors
 
 Simple Go library with all PostgreSQL error codes
+
 See: https://www.postgresql.org/docs/current/errcodes-appendix.html
 
 Example of using Is method
 
 ```go
 func CreateUser(ctx context.Context, email, password string) (int, error) {
-    sql = `insert into users (email, password) value ($1, $2) returning id`
+    sql = `insert into users (email, password) values ($1, $2) returning id`
     var id int
     err := client.QueryRow(ctx, sql, email, password).Scan(&id)
     if err != nil {
